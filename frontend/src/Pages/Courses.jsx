@@ -1,33 +1,106 @@
 import React from 'react'
 import { Clock, SquareLibraryIcon, ChessQueen, BookCheck, Users, ArrowRight } from "lucide-react";
+import {NavLink} from 'react-router-dom'
 
 const Courses = () => {
 
   const courses = [
     {
-      title: "NDA Foundation Course",
+      title: "SSC GD Preparation Program",
       duration: "12 Months",
       mode: "Offline + Online",
-      desc: "Comprehensive preparation for NDA written exam and SSB interview."
+      desc: "Complete written, physical and medical preparation for SSC General Duty constable recruitment.."
     },
     {
-      title: "CDS Preparation Batch",
+      title: "Agniveer Defence Training",
       duration: "6 Months",
       mode: "Offline",
-      desc: "Focused preparation for CDS written examination with mock practice."
+      desc: "Structured training for Agniveer Army recruitment including physical endurance and written exam guidance."
     },
     {
-      title: "AFCAT Target Batch",
+      title: "Delhi & Assam Police Coaching",
       duration: "4 Months",
       mode: "Online",
-      desc: "Strategic preparation for AFCAT technical and non-technical entries."
+      desc: "Special coaching for Delhi and Assam Police constable written and physical tests."
     },
     {
-      title: "Army GD & Technical",
+      title: "Tripura Police Recruitment Training",
       duration: "3 Months",
       mode: "Offline",
-      desc: "Physical, written and medical preparation guidance for Army recruitment."
-    }
+      desc: "Comprehensive preparation for Tripura Police exams with fitness and syllabus coverage."
+    },
+    {
+      title: "Railway Group D Preparation",
+      duration: "3 Months",
+      mode: "Offline",
+      desc: "Full syllabus preparation for Railway Group D and NTPC competitive examinations."
+    },
+    {
+      title: "TSR Battalion Entry Coaching",
+      duration: "3 Months",
+      mode: "Offline",
+      desc: "Targeted coaching for Tripura State Rifles physical standards and written examination."
+    },
+    {
+      title: "RPF Constable Exam Training",
+      duration: "3 Months",
+      mode: "Offline",
+      desc: "Dedicated preparation for Railway Protection Force written and physical efficiency tests."
+    },
+    {
+      title: "Defence Tradesman Course",
+      duration: "3 Months",
+      mode: "Offline",
+      desc: "Technical and non-technical tradesman recruitment preparation with practical skill development."
+    },
+    {
+      title: "CISF Recruitment Coaching",
+      duration: "3 Months",
+      mode: "Offline",
+      desc: "Intensive training for CISF constable and head constable written and PET exams."
+    },
+    {
+      title: "SSB Defence Selection Training",
+      duration: "3 Months",
+      mode: "Offline",
+      desc: "Focused preparation for Sashastra Seema Bal recruitment including endurance and theory."
+    },
+    {
+      title: "BSF Border Force Coaching",
+      duration: "3 Months",
+      mode: "Offline",
+      desc: "Complete preparation for Border Security Force selection with physical and written training."
+    },
+    {
+      title: "CRPF Constable Preparation Course",
+      duration: "3 Months",
+      mode: "Offline",
+      desc: "Structured guidance for CRPF recruitment including fitness drills and exam strategy."
+    },
+    {
+      title: "Assam Rifles Entry Program",
+      duration: "3 Months",
+      mode: "Offline",
+      desc: "Intensive preparation for Assam Rifles recruitment including physical standards and written syllabus."
+    },
+    {
+      title: "ITBP Recruitment Coaching",
+      duration: "3 Months",
+      mode: "Offline",
+      desc: "Specialized training for Indo Tibetan Border Police physical and competitive examinations."
+    },
+    {
+      title: "State Government Job Preparation",
+      duration: "3 Months",
+      mode: "Offline",
+      desc: "Preparation for various state government recruitment exams with structured academic guidance."
+    },
+    {
+      title: "Central Government Job Training",
+      duration: "3 Months",
+      mode: "Offline",
+      desc: "Comprehensive coaching for multiple central government competitive recruitment examinations."
+    },
   ];
 
 
@@ -35,7 +108,7 @@ const Courses = () => {
     <main className="bg-gray-50 text-gray-900">
 
       {/* OVERVIEW */}
-      <section className="bg-gray-50 py-20 px-4">
+      <section className="bg-gray-50 px-4 pt-40">
         <div className="max-w-7xl mx-auto">
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -122,9 +195,11 @@ const Courses = () => {
                   </div>
                 </div>
 
-                <button className="mt-6 flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white py-2.5 rounded-xl shadow-md hover:shadow-lg transition duration-300">
-                  Enroll Now <ArrowRight size={16} />
-                </button>
+                <NavLink to="/register">
+                  <button className="mt-6 flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white py-2.5 rounded-xl shadow-md hover:shadow-lg transition duration-300 w-full">
+                    Enroll Now <ArrowRight size={16} />
+                  </button>
+                </NavLink>
               </div>
             ))}
 

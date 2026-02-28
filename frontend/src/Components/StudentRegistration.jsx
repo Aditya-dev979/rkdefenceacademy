@@ -34,7 +34,7 @@ export default function StudentRegistration() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 py-16 bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300">
+    <div className="min-h-screen flex items-center justify-center px-4 py-16 bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 pt-28">
 
       <div className="w-full max-w-3xl bg-white shadow-2xl rounded-3xl p-8 md:p-12">
 

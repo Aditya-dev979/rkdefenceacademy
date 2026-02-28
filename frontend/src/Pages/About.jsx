@@ -4,28 +4,28 @@ import { Shield, Flame, Scale, Flag } from "lucide-react";
 
 const course = [
   {
-    title: "NDA",
-    desc: "National Defence Academy Examination (NDA)",
+    title: "SSC GD",
+    desc: "Staff Selection Commission General Duty (SSC GD)",
   },
   {
-    title: "CDS",
-    desc: "Combined Defence Services Examination (CDS)",
+    title: "RPF",
+    desc: "Railway Protection Force (RPF)",
   },
   {
-    title: "AFCAT",
-    desc: "Air Force Common Admission Test (AFCAT)",
+    title: "CISF",
+    desc: "Central Industrial Security Force (CISF)",
   },
   {
-    title: "IAR",
-    desc: "Indian Army Recruitment (IAR)",
+    title: "SSB",
+    desc: "Sashastra Seema Bal (SSB)",
   },
   {
-    title: "INR",
-    desc: "Indian Navy Recruitment (INR)",
+    title: "CRPF",
+    desc: "Central Reserve Police Force (CRPF)",
   },
   {
-    title: "IAFR",
-    desc: "Indian Air Force Recruitment (IAFR)",
+    title: "STATE",
+    desc: "State Government Job",
   },
 ]
 
@@ -47,8 +47,8 @@ const features = [
   },
   {
     icon: <Target size={32} />,
-    title: "SSB Guidance",
-    desc: "Comprehensive personality and OLQ development training."
+    title: "SSC GD",
+    desc: "Staff Selection Commission General Duty"
   },
   {
     icon: <ShieldCheck size={32} />,

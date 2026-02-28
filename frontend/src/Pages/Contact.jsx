@@ -14,7 +14,7 @@ const Contact = () => {
               Contact RK Defence Academy
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Have questions about NDA, CDS, AFCAT or Army recruitment?
+              Have questions about SSC GD, AGNIVEER, RPF or Army recruitment?
               Get in touch with us today and start your journey towards the uniform.
             </p>
           </div>
@@ -87,17 +87,17 @@ const Contact = () => {
 
                   <div className="flex items-start gap-4">
                     <Phone className="text-green-600" />
-                    <p>+91 98765 43210</p>
+                    <p>+91 60094 32543</p>
                   </div>
 
                   <div className="flex items-start gap-4">
                     <Mail className="text-green-600" />
-                    <p>rkdefenceacademy@gmail.com</p>
+                    <p>contact@rkdefenceacademy.in</p>
                   </div>
 
                   <div className="flex items-start gap-4">
                     <MapPin className="text-green-600" />
-                    <p>Near Main Market, Jaipur, Rajasthan</p>
+                    <p>Nathpara Near By Ramthakur College, Badhargat, Agartala, Tripura, 799003</p>
                   </div>
 
                   <div className="flex items-start gap-4">

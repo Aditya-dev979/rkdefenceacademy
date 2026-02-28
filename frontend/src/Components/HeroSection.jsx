@@ -1,8 +1,20 @@
 import heroImg from "../assets/h2.webp"; // apni image yaha import karo
 import img1 from "../assets/s1.webp"
 import img2 from "../assets/s2.webp"
-import img3 from "../assets/s3.webp"
+import img3 from "../assets/dipankar.webp"
+import img5 from "../assets/s6.webp"
+import img6 from "../assets/s7.webp"
+import img7 from "../assets/s8.webp"
+import img4 from "../assets/director.webp";
 import preparation from "../assets/preparation.webp";
+import { NavLink } from 'react-router-dom'
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 import { Trophy, Users, Medal, GraduationCap, CheckCircle, BadgeCheck } from "lucide-react";
 
@@ -13,24 +25,39 @@ export default function HeroSection() {
     const students = [
         {
             id: 1,
-            name: "Rahul Sharma",
-            exam: "NDA",
-            selectedIn: "Indian Army",
+            name: "Joudul",
+            selectedIn: "Commando",
             image: img1,
         },
         {
             id: 2,
-            name: "Priya Singh",
-            exam: "AFCAT",
-            selectedIn: "Indian Air Force",
+            name: "Kishan",
+            selectedIn: "CISF",
             image: img2,
         },
         {
             id: 3,
-            name: "Vikram Patel",
-            exam: "CDS",
-            selectedIn: "Indian Navy",
+            name: "Dipankar",
+            selectedIn: "BFS",
             image: img3,
+        },
+        {
+            id: 4,
+            name: "Dipankar",
+            selectedIn: "TSR",
+            image: img5,
+        },
+        {
+            id: 5,
+            name: "Ajay",
+            selectedIn: "Army",
+            image: img6,
+        },
+        {
+            id: 6,
+            name: "Maman",
+            selectedIn: "TSR",
+            image: img7,
         },
     ];
 
@@ -116,15 +143,12 @@ export default function HeroSection() {
                     {/* Left Content */}
                     <div className="order-2 md:order-1">
                         <h1 className="text-4xl md:text-5xl font-bold leading-tight text-gray-900">
-                            Train for the{" "}
-                            <span className="text-green-600">
-                                Indian Defence Forces
-                            </span>
+                            Start Your Defence Journey with <span className="text-green-600">RK Defence Academy</span>
                         </h1>
 
                         <p className="mt-6 text-gray-600 text-lg">
-                            Join RK Defence Academy and prepare for NDA, CDS,
-                            and AFCAT with disciplined training, expert guidance,
+                            Join RK Defence Academy and prepare for SSC GD, AGNIVEER,
+                            and RPF with disciplined training, expert guidance,
                             and proven results.
                         </p>
 
@@ -142,12 +166,16 @@ export default function HeroSection() {
 
                         {/* Buttons */}
                         <div className="mt-6 flex flex-wrap gap-4">
-                            <button className="border border-green-600 text-green-600 px-6 py-3 rounded-lg hover:bg-green-50 transition">
-                                View All Programs
-                            </button>
-                            <button className="bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-black transition">
-                                Join Academy
-                            </button>
+                            <NavLink to="/courses">
+                                <button className="border border-green-600 text-green-600 px-6 py-3 rounded-lg hover:bg-green-50 transition">
+                                    View All Programs
+                                </button>
+                            </NavLink>
+                            <NavLink to="/register">
+                                <button className="bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-black transition">
+                                    Join Academy
+                                </button>
+                            </NavLink>
                         </div>
                     </div>
 
@@ -181,52 +209,53 @@ export default function HeroSection() {
                         </p>
                     </div>
 
-                    {/* ===== Grid ===== */}
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {/* slider */}
+                    <Swiper
+                        modules={[Navigation]}
+                        spaceBetween={24}
+                        navigation
+                        loop={false}
+                        breakpoints={{
+                            0: { slidesPerView: 1 },
+                            640: { slidesPerView: 2 },
+                            1024: { slidesPerView: 3 },
+                        }}
+                    >
                         {students.map((student) => (
-                            <div
-                                key={student.id}
-                                className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition duration-300"
-                            >
-                                {/* Image */}
-                                <div className="relative">
-                                    <img
-                                        src={student.image}
-                                        alt={student.name}
-                                        className="w-full h-64 object-cover"
-                                    />
+                            <SwiperSlide key={student.id}>
+                                <div className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition duration-300">
 
-                                    {/* Selected Badge */}
-                                    <span className="absolute top-4 right-4 bg-green-600 text-white text-sm px-4 py-1 rounded-full shadow">
-                                        ⭐ Selected
-                                    </span>
-                                </div>
+                                    {/* Image */}
+                                    <div className="relative">
+                                        <img
+                                            src={student.image}
+                                            alt={student.name}
+                                            className="w-full h-64 object-cover"
+                                        />
 
-                                {/* Info */}
-                                <div className="p-6">
-                                    <h3 className="text-xl font-semibold text-gray-900">
-                                        {student.name}
-                                    </h3>
-
-                                    <div className="flex justify-between items-center mt-4 text-sm">
-                                        <div>
-                                            <p className="text-gray-500">Exam:</p>
-                                            <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full">
-                                                {student.exam}
-                                            </span>
-                                        </div>
-
-                                        <div className="text-right">
-                                            <p className="text-gray-500">Selected In:</p>
-                                            <p className="font-medium text-gray-800">
-                                                {student.selectedIn}
-                                            </p>
-                                        </div>
+                                        <span className="absolute top-4 right-4 bg-green-600 text-white text-sm px-4 py-1 rounded-full shadow">
+                                            ⭐ Selected
+                                        </span>
                                     </div>
+
+                                    {/* Info */}
+                                    <div className="p-6">
+                                        <h3 className="text-xl font-semibold text-gray-900">
+                                            {student.name}
+                                        </h3>
+
+                                        <div className="mt-5">
+                                                <p className="text-gray-500">Selected In:</p>
+                                                <p className="font-medium text-gray-800">
+                                                    {student.selectedIn}
+                                                </p>
+                                            </div>
+                                    </div>
+
                                 </div>
-                            </div>
+                            </SwiperSlide>
                         ))}
-                    </div>
+                    </Swiper>
 
                 </div>
             </section>
@@ -297,8 +326,8 @@ export default function HeroSection() {
                         </h2>
 
                         <p className="text-gray-600 mt-6 text-lg">
-                            RK Defence Academy provides disciplined training for NDA,
-                            CDS, and AFCAT with experienced trainers and structured programs.
+                            RK Defence Academy provides disciplined training for SSC GD,
+                            AGNIVEER, and RPF with experienced trainers and structured programs.
                         </p>
 
                         {/* Feature List */}
@@ -313,13 +342,17 @@ export default function HeroSection() {
 
                         {/* Buttons */}
                         <div className="mt-10 flex flex-wrap gap-4">
-                            <button className="bg-green-600 text-white px-6 py-3 rounded-lg shadow hover:bg-green-700 transition">
-                                Student Registration
-                            </button>
+                            <NavLink to="/register">
+                                <button className="bg-green-600 text-white px-6 py-3 rounded-lg shadow hover:bg-green-700 transition">
+                                    Student Registration
+                                </button>
+                            </NavLink>
 
-                            <button className="border border-gray-400 px-6 py-3 rounded-lg text-gray-700 hover:bg-gray-200 transition">
-                                View Training Programs
-                            </button>
+                            <NavLink to="/courses">
+                                <button className="border border-gray-400 px-6 py-3 rounded-lg text-gray-700 hover:bg-gray-200 transition">
+                                    View Training Programs
+                                </button>
+                            </NavLink>
                         </div>
                     </div>
 
@@ -357,7 +390,7 @@ export default function HeroSection() {
             <section className="py-20 bg-gray-50">
                 <div className="max-w-7xl mx-auto px-4">
 
-                    {/* ===== Section Heading ===== */}
+                    {/* ===== Section Heading (NO CHANGE) ===== */}
                     <div className="text-center mb-14">
                         <h2 className="text-4xl font-bold text-gray-900 flex justify-center items-center gap-3">
                             🎓 Our Certified Trainers
@@ -366,61 +399,113 @@ export default function HeroSection() {
                             RK Defence Academy trains you with certified trainers from Army,
                             Navy, and Air Force
                         </p>
+                        <h3 className="text-3xl font-bold text-gray-900 mb-6 mt-10">
+                            Meet Our Director – Rakesh Baskar
+                        </h3>
                     </div>
 
-                    {/* ===== Trainer Cards ===== */}
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {trainers.map((trainer) => (
-                            <div
-                                key={trainer.id}
-                                className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition duration-300"
-                            >
-                                {/* Image */}
-                                <div className="relative">
-                                    <img
-                                        src={trainer.image}
-                                        alt={trainer.name}
-                                        className="w-full h-72 object-cover"
-                                    />
+                    {/* ===== 2 Column Layout ===== */}
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
 
-                                    {/* Certified Badge */}
-                                    <span className="absolute top-4 right-4 bg-green-600 text-white text-sm px-4 py-1 rounded-full shadow flex items-center gap-1">
-                                        <BadgeCheck size={16} /> Certified
-                                    </span>
-                                </div>
+                        {/* ===== Left Side Image ===== */}
+                        <div className="relative">
+                            <img
+                                src={img4}
+                                alt="Rakesh Baskar - Director RK Defence Academy"
+                                className="w-full rounded-2xl shadow-xl"
+                            />
 
-                                {/* Info */}
-                                <div className="p-6">
-                                    <h3 className="text-xl font-semibold text-gray-900">
-                                        {trainer.name}
-                                    </h3>
-
-                                    <p className="text-green-600 font-medium mt-2">
-                                        {trainer.role}
-                                    </p>
-
-                                    <p className="text-gray-600 mt-2">
-                                        {trainer.expertise}
-                                    </p>
-                                </div>
+                            <div className="absolute bottom-6 left-6 bg-black/70 text-white px-6 py-3 rounded-xl">
+                                <h3 className="text-lg font-semibold">Rakesh Baskar</h3>
+                                <p className="text-sm">Director, RK Defence Academy</p>
                             </div>
-                        ))}
-                    </div>
+                        </div>
 
-                    {/* ===== Bottom Info Banner ===== */}
-                    <div className="mt-16 bg-white rounded-2xl shadow-md p-8 text-center">
-                        <p className="text-gray-700 text-lg">
-                            All our trainers are{" "}
-                            <span className="text-green-600 font-semibold">
-                                ex-defence officers
-                            </span>{" "}
-                            with proven track records in training defence aspirants
-                        </p>
+                        {/* ===== Right Side Content ===== */}
+                        <div>
+                            <p className="text-gray-700 text-lg leading-relaxed mb-6">
+                                Rakesh Baskar, Director of RK Defence Academy, is dedicated to shaping
+                                disciplined and confident defence aspirants. Under his leadership,
+                                the academy provides structured and result-oriented training programs
+                                for SSC GD, AGNIVEER, CISF, CRPF, and RPF examinations.
+                            </p>
+
+                            <p className="text-gray-700 text-lg leading-relaxed mb-6">
+                                With a strong focus on physical fitness, written examination preparation,
+                                and personality development, he ensures that every student receives
+                                comprehensive guidance from experienced and certified trainers.
+                                His disciplined approach and strategic training methods help students
+                                achieve their dream of serving the nation.
+                            </p>
+                        </div>
+
                     </div>
 
                 </div>
             </section>
 
+            {/* SECTION 6 */}
+
+            <section className="py-16 bg-gray-50">
+                <div className="max-w-6xl mx-auto px-4">
+
+                    {/* Section Heading (Optional – Remove if not needed) */}
+                    <div className="text-center mb-12">
+                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+                            Why Choose RK Defence Academy?
+                        </h2>
+                        <p className="text-gray-600 mt-3 max-w-2xl mx-auto">
+                            Comprehensive and disciplined training approach designed for defence aspirants.
+                        </p>
+                    </div>
+
+                    {/* Highlights Cards */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                        {/* Card 1 */}
+                        <div className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition duration-300 h-full">
+                            <h4 className="font-semibold text-green-600 mb-3 text-lg">
+                                ✔ Structured Programs
+                            </h4>
+                            <p className="text-gray-600 text-sm leading-relaxed">
+                                Well-planned syllabus coverage, mock tests, and regular performance tracking.
+                            </p>
+                        </div>
+
+                        {/* Card 2 */}
+                        <div className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition duration-300 h-full">
+                            <h4 className="font-semibold text-green-600 mb-3 text-lg">
+                                ✔ Experienced Trainers
+                            </h4>
+                            <p className="text-gray-600 text-sm leading-relaxed">
+                                Guidance from ex-defence professionals with real-field experience.
+                            </p>
+                        </div>
+
+                        {/* Card 3 */}
+                        <div className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition duration-300 h-full">
+                            <h4 className="font-semibold text-green-600 mb-3 text-lg">
+                                ✔ Physical + Written Training
+                            </h4>
+                            <p className="text-gray-600 text-sm leading-relaxed">
+                                Balanced focus on fitness, endurance, and competitive exam preparation.
+                            </p>
+                        </div>
+
+                        {/* Card 4 */}
+                        <div className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition duration-300 h-full">
+                            <h4 className="font-semibold text-green-600 mb-3 text-lg">
+                                ✔ Mission-Oriented Vision
+                            </h4>
+                            <p className="text-gray-600 text-sm leading-relaxed">
+                                Building discipline, confidence, and commitment to serve the nation.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
 
         </main>
     );

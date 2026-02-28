@@ -52,14 +52,13 @@ export default function Footer() {
           <div className="flex items-start gap-3 mb-3 text-gray-600">
             <MapPin size={18} />
             <p className="text-sm">
-              Badharghat, Near Ramthakur College,<br />
-              Agartala, Tripura
+              Nathpara Near By Ramthakur College, Badhargat, Agartala, Tripura, 79900
             </p>
           </div>
 
           <div className="flex items-center gap-3 mb-3 text-gray-600">
             <Phone size={18} />
-            <p className="text-sm">+91 6009432543</p>
+            <p className="text-sm">+91 60094 32543</p>
           </div>
 
           <div className="flex items-center gap-3 text-gray-600">
@@ -75,9 +74,11 @@ export default function Footer() {
           </h3>
 
           <div className="flex gap-4 mb-6 text-gray-600">
-            <Facebook className="hover:text-gray-900 cursor-pointer transition" />
-            <Instagram className="hover:text-gray-900 cursor-pointer transition" />
-            <Youtube className="hover:text-gray-900 cursor-pointer transition" />
+            <a href="https://www.facebook.com/RKDEFENCEACADEMYTRIPURA/" target="blank"><Facebook className="hover:text-gray-900 cursor-pointer transition" /></a>
+            <a href="https://www.instagram.com/rkdefenceacademyagartala?igsh=MTBmcjd2bG84aGI3ag==" target="blank"><Instagram className="hover:text-gray-900 cursor-pointer transition" /></a>
+            <a href="https://youtube.com/@rkdefenceacademybishramgan5888?si=Dsj6qmCSktWbQASu" target="blank"><Youtube className="hover:text-gray-900 cursor-pointer transition" /></a>
+            
+            
           </div>
 
           <NavLink to="/register">
@@ -85,6 +86,12 @@ export default function Footer() {
               Apply Now
             </button>
           </NavLink>
+
+          <div className="mt-10 flex gap-8 text-xs text-gray-500">
+            <a href="/privacy">Privacy Policy</a>
+            <a href="/terms">Terms</a>
+            <a href="/cookies">Cookies</a>
+          </div>
         </div>
 
       </div>
